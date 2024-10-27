@@ -21,5 +21,7 @@ public interface UserMapper {
     RegisteredUserDTO userToRegisteredUserDTO(User user);
     UserDTO userToUserDTO(User user);
 
+    // sebas lindo 
+
 
 }
