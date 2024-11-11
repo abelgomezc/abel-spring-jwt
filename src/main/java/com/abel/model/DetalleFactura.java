@@ -12,9 +12,9 @@ public class DetalleFactura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//    private String producto;
+
     private Integer cantidad;
-//    private Double precio;
+
 
     @JoinColumn(name = "factura_id")
     @ManyToOne
