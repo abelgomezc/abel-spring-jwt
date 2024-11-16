@@ -29,9 +29,9 @@ INSERT INTO producto (id, nombre, descripcion, precio_unitario,stock) VALUES (3,
 
 
 -- Inserta datos en la tabla 'DetalleFactura'
-INSERT INTO detalle_factura (id, cantidad,  factura_id, producto_id) VALUES (1, 2,1, 1); -- Producto A
-INSERT INTO detalle_factura (id, cantidad,  factura_id, producto_id) VALUES (2, 3,1, 2); -- Producto B
-INSERT INTO detalle_factura (id, cantidad,  factura_id, producto_id) VALUES (3, 1, 2, 3); -- Producto C
+INSERT INTO detalle_factura (id, cantidad,  factura_id, producto_id ) VALUES (1, 2,1, 1);
+INSERT INTO detalle_factura (id, cantidad,  factura_id, producto_id) VALUES (2, 3,1, 2);
+INSERT INTO detalle_factura (id, cantidad,  factura_id, producto_id) VALUES (3, 1, 2, 3);
 
 
 
