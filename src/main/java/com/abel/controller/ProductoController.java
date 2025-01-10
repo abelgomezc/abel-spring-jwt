@@ -5,6 +5,7 @@ import com.abel.model.Cliente;
 import com.abel.model.Producto;
 import com.abel.services.ProductoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -20,11 +21,21 @@ public class ProductoController {
     @Autowired
     ProductoServiceImpl productoService;
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'CUSTOMER')")
     @GetMapping("/listarProductos")
     public ResponseEntity<List<Producto>> listaProductos() {
         return new ResponseEntity<>(productoService.findByAll(), HttpStatus.OK);
     }
+
+//    @PreAuthorize("hasRole('ADMIN')")
+//    @GetMapping("/listarProductos")
+//    public ResponseEntity<Page<Producto>> listarProductos(
+//            @RequestParam(defaultValue = "0") int page, // Página por defecto
+//            @RequestParam(defaultValue = "5") int size // Tamaño por defecto
+//    ) {
+//        Page<Producto> productosPaginados = productoService.obtenerProductosPaginados(page, size);
+//        return new ResponseEntity<>(productosPaginados, HttpStatus.OK);
+//    }
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/nuevoProducto")
